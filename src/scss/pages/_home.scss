@@ -13,13 +13,22 @@
   background-image: linear-gradient(to right bottom,
     rgba($color-primary-light, 0.8),
     rgba($color-primary-dark, 0.8)),
-    url(../img/nat-4.jpg);
+    url(../img/nat-4-small.jpg);
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -14rem;
 
   &>* {
     transform: skewY(7deg);
+  }
+
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+          only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+          only screen and (min-width: 125em) {
+    background-image: linear-gradient(to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)),
+      url(../img/nat-4.jpg);
   }
 
   @include respond(tab-port) {
@@ -52,12 +61,12 @@
     $color-primary-light,
     $color-primary-dark);
 
-    @include respond(tab-port) {
-      padding: 12rem 0;
+  @include respond(tab-port) {
+    padding: 12rem 0;
   }
 
   .book {
-    background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 60%, transparent 60%), url(../img/nat-10.jpg);
+    background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 60%, transparent 60%), url(../img/nat-10-small.jpg);
     background-size: cover;
     border-radius: 4px;
     box-shadow: $shadow-medium;
@@ -67,28 +76,32 @@
     }
 
     @include respond(tab-land) {
-      background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 70%, transparent 70%), url(../img/nat-10.jpg);
+      background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 70%, transparent 70%), url(../img/nat-10-small.jpg);
     }
 
     @include respond(tab-port) {
-      background-image: linear-gradient(to right, rgba($color-white, .9) 0%, rgba($color-white, .9) 100%), url(../img/nat-10.jpg);
+      background-image: linear-gradient(to right, rgba($color-white, .9) 0%, rgba($color-white, .9) 100%), url(../img/nat-10-small.jpg);
     }
 
     &__form {
       width: 60%;
       padding: 8rem;
+
       @include respond(big-desk) {
         width: 50%;
-       }
+      }
+
       @include respond(tab-land) {
         width: 70%;
-       }
+      }
+
       @include respond(tab-port) {
         width: 100%;
-       }
-       @include respond(phone) {
-        padding: 4rem ;
-       }
+      }
+
+      @include respond(phone) {
+        padding: 4rem;
+      }
     }
   }
 }
